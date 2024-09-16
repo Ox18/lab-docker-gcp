@@ -14,7 +14,7 @@ data = pd.DataFrame({
     'y': np.random.randn(100)
 })
 
-st.subheader("Gráfico de datos aleatorios")
+st.subheader("Gráfico de datos aleatorios 2")
 plt.scatter(data['x'], data['y'])
 plt.title("Datos aleatorios")
 st.pyplot(plt)
