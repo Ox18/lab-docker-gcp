@@ -20,6 +20,21 @@ jobs:
     name: Setup, Build, and Deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Verificar si los secretos están presentes
+        run: |
+          if [ -z "$REGISTRY_NAME" ]; then
+            echo "REGISTRY_NAME está vacío o no está configurado."
+          else
+            echo "REGISTRY_NAME está configurado."
+          fi
+      - name: Imprimir secretos para depuración (No recomendado en producción)
+        run: |
+          echo "PROJECT_ID: $PROJECT_ID"
+          echo "REGION: $REGION"
+          echo "APP_NAME: $APP_NAME"
+          echo "REGISTRY_NAME: $REGISTRY_NAME"
+          echo "SERVICE_ACCOUNT_EMAIL: $SERVICE_ACCOUNT_EMAIL"
+
       - name: Checkout
         uses: actions/checkout@v3
 
