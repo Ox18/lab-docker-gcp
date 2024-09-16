@@ -52,6 +52,7 @@ jobs:
         run: |-
           gcloud run deploy $APP_NAME \
           --region $REGION \
+          --member="allUsers" \
           --image $REGION-docker.pkg.dev/$PROJECT_ID/$REGISTRY_NAME/$APP_NAME:$GITHUB_SHA \
           --platform "managed" \
           --service-account $SERVICE_ACCOUNT_EMAIL \
